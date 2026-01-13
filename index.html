@@ -39,12 +39,14 @@
 <body>
 
 <div class="container">
-    <iframe id="widget1"
+    <iframe
+        id="widget1"
         src="https://tikfinity.zerody.one/widget/topg?cid=2146077&preview=1"
         class="active">
     </iframe>
 
-    <iframe id="widget2"
+    <iframe
+        id="widget2"
         src="https://tikfinity.zerody.one/widget/tops?cid=2146077&preview=1">
     </iframe>
 </div>
@@ -61,7 +63,7 @@
         widgets[index].classList.remove("active");
         index = (index + 1) % widgets.length;
         widgets[index].classList.add("active");
-    }, 3000); // 3 segundos
+    }, 7000); // 7 segundos
 </script>
 
 </body>
