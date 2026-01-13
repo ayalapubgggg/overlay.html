@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tikfinity Rotación</title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        overflow: hidden;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: transparent;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    iframe.active {
+        opacity: 1;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <iframe id="widget1"
+        src="https://tikfinity.zerody.one/widget/topg?cid=2146077&preview=1"
+        class="active">
+    </iframe>
+
+    <iframe id="widget2"
+        src="https://tikfinity.zerody.one/widget/tops?cid=2146077&preview=1">
+    </iframe>
+</div>
+
+<script>
+    const widgets = [
+        document.getElementById("widget1"),
+        document.getElementById("widget2")
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+        widgets[index].classList.remove("active");
+        index = (index + 1) % widgets.length;
+        widgets[index].classList.add("active");
+    }, 3000); // 3 segundos
+</script>
+
+</body>
+</html>
